@@ -1,0 +1,26 @@
+package com.masaischool.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration {
+
+	@Bean
+	public SecurityFilterChain anyMethod(HttpSecurity http) {
+		Customizer<AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry> custom =
+
+				auth -> {
+					auth.requestMatchers("/**").permitAll();
+				};
+
+		http.authorizeHttpRequests(custom).formLogin(custom.);
+		return http.build();
+	}
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Define UserService bean -->
+	<bean id="userService" class="com.masai.UserService">
+		<!-- UserService requires a RecommendationService bean -->
+		<property name="recommendationService" ref="recommendationService" />
+	</bean>
+
+	<!-- Define RecommendationService bean -->
+	<bean id="recommendationService" class="com.masai.RecommendationService">
+		<!-- RecommendationService requires a ContentService bean -->
+		<property name="contentService" ref="contentService" />
+	</bean>
+
+	<!-- Define ContentService bean -->
+	<bean id="contentService" class="com.masai.ContentService">
+		<!-- ContentService requires a UserService bean -->
+		<property name="userService" ref="userService" />
+	</bean>
+</beans>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ErrorDetails.java&apos; to &apos;Day9_Assignment/src/main/java/com.masai.exception&apos;&#x0D;&#x0A;- Original project: &apos;B28_SB201_Ex_24_spring_data_jpa_example&apos;&#x0D;&#x0A;- Destination element: &apos;Day9_Assignment/src/main/java/com.masai.exception&apos;&#x0D;&#x0A;- Original element: &apos;com.masaischool.B28_SB201_Ex_24.exception.ErrorDetails.java&apos;" description="Copy compilation unit" destination="=Day9_Assignment/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.masai.exception" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.masaischool.B28_SB201_Ex_24.exception{ErrorDetails.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1691603984694" units="1" version="1.0"/>
+</session>

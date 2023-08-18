@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1690243224720_0" label="Java Main Sources" name="Java Main Sources"/>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1690243224732_1" label="Java Test Sources" name="Java Test Sources"/>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1690702353149_3" label="\B28_SB201_Ex_3_Circular_Dependency" name="\B28_SB201_Ex_3_Circular_Dependency">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/B28_SB201_Ex_3_Circular_Dependency" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1690243225731_2" label="Window Working Set" name="Aggregate for window 1690243225730"/>
+</workingSetManager>

@@ -1,0 +1,45 @@
+package com.masaischool.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration {
+
+	@Bean
+	public SecurityFilterChain anyMethod(HttpSecurity http) throws Exception {
+		/**
+		 * Customizer<AuthorizeHttpRequestsConfigurer<HttpSecurity>.
+		 * AuthorizationManagerRequestMatcherRegistry> custom =
+		 * 
+		 * auth -> { auth.requestMatchers("/**").permitAll(); };
+		 */
+
+		/**
+		 * http://localhost:8080/welcome -> will need login. http://localhost:8080/hello
+		 * -> will not need login.
+		 * 
+		 * we can say that /welcome is admin page because it have advance permissions
+		 * and /hello is users page ehich can only view the content.
+		 */
+
+		http.csrf(c -> c.disable()).authorizeHttpRequests(auth -> {
+
+			auth.requestMatchers("/hello", "/post").permitAll().requestMatchers("/welcome").authenticated();
+		}).formLogin(Customizer.withDefaults());
+		return http.build();
+	}
+
+	@Bean
+	public UserDetailsService getUser() {
+		User.withDefaultPasswordEncoder().username("abcd").password("123");
+		return null;
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;com.masai.mini_project&apos; to &apos;B28_MiniProject&apos;&#x0D;&#x0A;- Original element: &apos;com.masai.mini_project&apos;&#x0D;&#x0A;- Renamed element: &apos;com.masai.mini_project&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;com.masai.mini_project&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=com.masai.mini_project" name="B28_MiniProject" references="true" stamp="1691033488325" version="1.0"/>
+</session>

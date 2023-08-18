@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Employee Management</title>
+    </head>
+
+    <body>
+        <h1>Employee Management</h1>
+
+        <form id="employeeForm">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" required />
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" required />
+            <label for="email">Email:</label>
+            <input type="email" id="email" required />
+            <label for="position">Position:</label>
+            <input type="text" id="position" required />
+            <button type="submit">Add Employee</button>
+        </form>
+
+        <button id="getEmployees">Get All Employees</button>
+
+        <h2>Employees:</h2>
+        <ul id="employeeList"></ul>
+
+        <script>
+            const form = document.getElementById("employeeForm");
+            const employeeList = document.getElementById("employeeList");
+            const getEmployeesButton = document.getElementById("getEmployees");
+
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                const data = {
+                    firstName: form.firstName.value,
+                    lastName: form.lastName.value,
+                    email: form.email.value,
+                    position: form.position.value,
+                };
+                const response = await fetch(
+                    "http://localhost:8080/employees",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(data),
+                    }
+                );
+                if (response.ok) {
+                    const employee = await response.json();
+                    displayEmployee(employee);
+                }
+            });
+
+            getEmployeesButton.addEventListener("click", fetchEmployees);
+
+            async function fetchEmployees() {
+                employeeList.innerHTML = ""; // Clear existing list
+                const response = await fetch("http://localhost:8080/employees");
+                const employees = await response.json();
+                console.log(response, employees);
+                employees.forEach(displayEmployee);
+            }
+
+            function displayEmployee(employee) {
+                const li = document.createElement("li");
+                li.textContent = `${employee.firstName} ${employee.lastName} - ${employee.position}`;
+                employeeList.appendChild(li);
+            }
+
+            fetchEmployees();
+        </script>
+    </body>
+</html>

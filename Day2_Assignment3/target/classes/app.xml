@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="restaurantService" class="com.masai.RestaurantService"></bean>
+
+	<bean id="orderService" class="com.masai.OrderService">
+		<property name="restaurantService" ref="restaurantService" />
+	</bean>
+
+	<bean id="deliveryService" class="com.masai.DeliveryService">
+		<property name="orderService" ref="orderService" />
+		<property name="str" value="Gulab jamun"/>
+	</bean>
+
+</beans>
