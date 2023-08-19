@@ -11,4 +11,5 @@
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.masaischool.B28_SB201_Ex_3_circular_dependency.App"/>
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value=""/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="B28_SB201_Ex_3_Circular_Dependency"/>
+    <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
 </launchConfiguration>

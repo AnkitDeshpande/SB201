@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Built-By: Masai
-Build-Jdk: 17.0.6
+Built-By: Dell
+Build-Jdk: 20
 Created-By: Maven Integration for Eclipse
 
