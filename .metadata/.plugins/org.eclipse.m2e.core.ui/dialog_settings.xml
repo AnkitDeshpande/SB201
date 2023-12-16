@@ -79,6 +79,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Ankit\SB201"/>
 			<item value="C:\Users\Dell\Downloads\Compressed\psc_sb201_b28_2_357696\psc_sb201_b28_2"/>
 			<item value="C:\Users\Dell\Downloads\Compressed\B28 SB201 Day-04 Coding Examples\B28_SB201_Ex_15_autowiring_byName_byType"/>
 			<item value="C:\Users\Dell\Downloads\Compressed\B28 SB201 Day-04 Coding Examples\B28_SB201_Ex_14_autowiring"/>
@@ -93,7 +94,6 @@
 			<item value="C:\Users\Dell\Downloads\Compressed\SB201_B28_DAY-02_coding_example\B28_SB201_Ex_5_Circular_Dependency_Solution"/>
 			<item value="C:\Users\Dell\Downloads\Compressed\SB201_B28_DAY-02_coding_example\B28_SB201_Ex_4_Setter_Injection"/>
 			<item value="C:\Users\Dell\Downloads\Compressed\SB201_B28_DAY-02_coding_example\B28_SB201_Ex_3_Circular_Dependency"/>
-			<item value="C:\Users\Dell\Downloads\Compressed\SB201_B28_DAY-02_coding_example\B28_SB201_Ex_2_Constructor_Injection"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]-[version]"/>

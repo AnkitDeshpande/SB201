@@ -3,7 +3,7 @@ package com.masaischool.B28_SB201_Ex_2_constructor_injection;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class App {
+public class App {Marina Beach, Tamil Nadu
     public static void main( String[] args ){
     	ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
     	

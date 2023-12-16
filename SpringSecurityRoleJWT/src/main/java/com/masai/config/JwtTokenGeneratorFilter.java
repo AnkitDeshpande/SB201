@@ -25,44 +25,39 @@ public class JwtTokenGeneratorFilter extends OncePerRequestFilter {
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
-		
-	
-		
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (null != authentication) {
-            SecretKey key = Keys.hmacShaKeyFor(SecurityConstants.JWT_KEY.getBytes());
-            String jwt = Jwts.builder()
-            		.setIssuer("Ram")
-            		.setSubject("JWT Token")
-                    .claim("username", authentication.getName())
-                    .claim("authorities", populateAuthorities(authentication.getAuthorities()))
-                    .setIssuedAt(new Date())
-                    .setExpiration(new Date(new Date().getTime()+ 30000000)) // millisecond expiration time of around 8 hours
-                    .signWith(key).compact();
-                       
-            response.setHeader(SecurityConstants.JWT_HEADER, jwt);
-        }
 
-        filterChain.doFilter(request, response);	
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (null != authentication) {
+			SecretKey key = Keys.hmacShaKeyFor(SecurityConstants.JWT_KEY.getBytes());
+			String jwt = Jwts.builder().setIssuer("Ram").setSubject("JWT Token")
+					.claim("username", authentication.getName())
+					.claim("authorities", populateAuthorities(authentication.getAuthorities())).setIssuedAt(new Date())
+					.setExpiration(new Date(new Date().getTime() + 30000000)) // millisecond expiration time of around 8
+																				// hours
+					.signWith(key).compact();
+
+			response.setHeader(SecurityConstants.JWT_HEADER, jwt);
+		}
+
+		filterChain.doFilter(request, response);
 	}
-	
-    private String populateAuthorities(Collection<? extends GrantedAuthority> collection) {
-        
-    	Set<String> authoritiesSet = new HashSet<>();
-        
-        for (GrantedAuthority authority : collection) {
-            authoritiesSet.add(authority.getAuthority());
-        }
-        return String.join(",", authoritiesSet);
-   
-    
-    }
-	
+
+	private String populateAuthorities(Collection<? extends GrantedAuthority> collection) {
+
+		Set<String> authoritiesSet = new HashSet<>();
+
+		for (GrantedAuthority authority : collection) {
+			authoritiesSet.add(authority.getAuthority());
+		}
+		return String.join(",", authoritiesSet);
+
+	}
+
 //this make sure that this filter will execute only for first time when client call the api /signIn at first time
 	@Override
 	protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
-	
-        return !request.getServletPath().equals("/signIn");	
+
+		return !request.getServletPath().equals("/signIn");
 	}
-	
+
 }
